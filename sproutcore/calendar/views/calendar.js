@@ -9,6 +9,9 @@
   Bind your controller on the "theDate" so that it is notified of user changes and/or
   it notifies the calendar of the new date.
 
+  Dependencies: depends on the www.datejs.com (MIT Licensed) library for date calculations. Simply
+  drop http://datejs.googlecode.com/files/date.js in your SC app.
+
   @extends SC.View
 */
 XT.Calendar = SC.View.extend(
