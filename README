@@ -7,4 +7,7 @@ Index:
 - a calendar component for sproutcore (currently only in Italian). See the screenshot in
   sproutcore/calendar/screenshot/
 
+- a mixin that adds a close (round X) button on the top right corner of a palette pane
+  Screenshot in: sproutcore/closable/screenshot/
+
 Enjoy, Umberto.
