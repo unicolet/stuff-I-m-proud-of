@@ -1,12 +1,28 @@
 #!/bin/bash
+# Migrate existing opennms db to provisiond
+#
+# umberto.nicoletti at gmail.com
+#
 
+# this is the provisioning group to which the nodes will be added to
 PROVGROUP="stampanti"
+
+# don't migrate these services. This is mostly useful when importing
+# routers, switches and the like and don't care about ssh, telnet, http, ecc
 BLACKLIST_SERVICES="'HTTP','FTP','SMTP','NSClient','StrafePing','NSClientpp','HP Insight Manager','Windows-Task-Scheduler','NRPE-NoSSL','NRPE','Telnet','SSH','HTTP-8080','HTTP-8000','Dell-OpenManage'"
-#ADD_SERVICES="Windows-Spooler"
+
+# always add these services: for instance in the new opennms instance you have enabled 
+# WMI monitoring and want to automatically add new services to the imported nodes
 ADD_SERVICES=""
-NODE_FILTER="and nodelabel like 'NP%'"
+
+# a valid sql where condition. Filter is only valid to the node table (aliased n) 
+NODE_FILTER="and n.nodelabel like 'NP%'"
 #NODE_FILTER="and n.nodesysoid='.1.3.6.1.4.1.311.1.1.3.1.2'"
 #NODE_FILTER="and n.nodeid=471"
+
+# the host where the postgres db is running. The script will prompt for the password
+# if the user runinng the script is not 'trusted'
+DB_HOST=127.0.0.1
 
 ###############################
 # do not modify below this line
@@ -14,7 +30,7 @@ NODE_FILTER="and nodelabel like 'NP%'"
 export PROVGROUP
 
 function sql() {
-	echo $1 | psql -A -t -h 172.25.192.12 -U opennms opennms;
+	echo $1 | psql -A -t -h ${DB_HOST} -U opennms opennms;
 }
 
 listnodes="select n.nodeid,n.nodelabel from node n where 1=1 ${NODE_FILTER};"
