@@ -34,11 +34,9 @@ XT.Calendar = SC.View.extend(
             this.theDate=theDate;
         }
 
-        var firtsOfMonth=Date.parse((1900+theDate.getYear())+"/"+(theDate.getMonth()+1)+"/"+1);
-        var daysToPreviousSunday=firtsOfMonth.getDay()==0 ? 6 : firtsOfMonth.getDay()-1;
-        var firstOfPeriod=firtsOfMonth.add(-1*(daysToPreviousSunday)).days();
-        this.saveFirstOfPeriod(theDate);
-        
+        this.saveFirstOfPeriod(this.computeFirstOfPeriod(theDate));
+        var firstOfPeriod=this.computeFirstOfPeriod(theDate);
+
         var mese=this.get("nomeMesi")[theDate.getMonth()];
         var anno=1900+theDate.getYear();
 
@@ -76,10 +74,15 @@ XT.Calendar = SC.View.extend(
         context.end();// close table        
     },
 
-    saveFirstOfPeriod: function(d) {
-        var firtsOfMonth=Date.parse((1900+d.getYear())+"/"+(d.getMonth()+1)+"/"+1);
-        this.set("firstOfPeriod",firtsOfMonth.add(-1*(firtsOfMonth.getDay()-1)).days());
+     saveFirstOfPeriod: function(d) {
+        this.set("firstOfPeriod",d);
     },
+
+    computeFirstOfPeriod: function(d) {
+        var firtsOfMonth=Date.parse((1900+d.getYear())+"/"+(d.getMonth()+1)+"/"+1);
+        var daysToPreviousSunday=firtsOfMonth.getDay()==0 ? 6 : firtsOfMonth.getDay()-1;
+        return firtsOfMonth.add(-1 * (daysToPreviousSunday)).days();
+     },
 
     mouseDown: function(evt) {
         return YES;
