@@ -11,4 +11,6 @@ Index:
 
 - opennms: scripts to migrate opennms nodes to a provisioning configuration
 
+- sproutcore/agenda: a view that displays activities in a day like, well, an agenda
+
 Enjoy, Umberto.
