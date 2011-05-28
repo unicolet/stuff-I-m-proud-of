@@ -1,4 +1,5 @@
-== Various scripts and stuff used for my blog ==
+Various scripts and stuff used for my blog
+==========================================
 
 Index:
 
