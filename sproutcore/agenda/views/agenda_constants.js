@@ -1,15 +1,15 @@
 
-const k_rooms = 'spazi';
-const k_roomname = 'nomespazio';
-const k_workername = 'fkt';
-const k_begin = 'inizio';
-const K_end = 'fine';
-const k_length = 'durata';
-const k_activityname = 'nome';
-const k_activityid = 'id_terapia';
-const k_room_shift_id = 'id_spazioturno';
-const k_activities = 'terapie';
-const k_customername = 'cliente';
+const k_rooms = 'rooms';
+const k_roomname = 'roomname';
+const k_workername = 'wkr';
+const k_begin = 'begin';
+const K_end = 'end';
+const k_length = 'length';
+const k_activityname = 'name';
+const k_activityid = 'activity_id';
+const k_room_shift_id = 'id_room_shift';
+const k_activities = 'activity';
+const k_customername = 'person';
 
 const beginTime = 7;
 const endTime = 20;
