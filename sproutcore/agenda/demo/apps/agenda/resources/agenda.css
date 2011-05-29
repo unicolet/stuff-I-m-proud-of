@@ -1,0 +1,152 @@
+.timeline {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    background-color: white;
+}
+
+#shiftscontainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 20px;
+    background-color: #ECECEC;
+    /*border-left: 1px solid #777;*/
+}
+
+div.workername {
+    position: absolute;
+    left: 2px;
+    text-align: center;
+    background-color: #D2D2D2;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.rooms {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /*background-color: #C3D9FF;*/
+    text-align: center;
+}
+
+div.name {
+    background-color: #097DFF;
+    font-weight:bold;
+    height: 20px;
+    width: 70%;
+    margin: 5px auto;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.hour {
+    position: absolute;
+    color: gray;
+    border-bottom: 1px solid gray;
+    font-size: 9px;
+    height: 10px;
+}
+
+.lunchBreakEnd {
+    position: absolute;
+    color: gray;
+    border-bottom: 1px solid gray;
+    font-size: 9px;
+    height: 10px;
+}
+
+/* Appuntamento */
+div.appointment {
+    position: absolute;
+    background-color: #F9F7ED;
+    text-align: center;
+    left: 8px;
+    border: 1px solid #36393D;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #36393D;
+    overflow: hidden;
+    -moz-box-shadow: 0 0 2px 2px #B3B3B3;
+    -webkit-box-shadow: 0 0 2px 2px #B3B3B3;
+    box-shadow: 0 0 2px 2px #B3B3B3;
+}
+
+div.appointment div.customer{
+    background-color: #097DFF;
+    font-weight:bold;
+    height: 15px;
+    width: 100%;
+    margin: 0px auto;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    vertical-align: middle;
+    text-shadow: #555 0px 1px 0px;
+	color: white;
+}
+
+div.customer div.customername {
+    overflow: hidden;
+    height: 15px;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.activity {
+    margin-top: 5px;
+}
+
+.activity .little {
+    font-size: 80%;
+}
+
+/* terapie */
+.activity1 {
+    background-color: #FFFF88;
+}
+.activity2 {
+    background-color: #C3D9FF;
+}
+.activity4 {
+    background-color: #356AA0;
+}
+.activity3 {
+    background-color: #6BBA70;
+}
+.activity5 {
+    background-color: #CDEB8B;
+}
+.activity6 {
+    background-color: #FFA051;
+}
+.activity7 {
+    background-color: #6CCA70;
+}
+.activity8 {
+    background-color: #378B3D;
+}
+.activity9 {
+    background-color: #D1AC64;
+}
+.activity10 {
+    background-color: #4AA3E5;
+}
+.activity11 {
+    background-color: #FFEA88;
+}
+.activity12 {
+    background-color: #F98576;
+}
+.activity100 {
+    background-color: #F99EB7;
+}
