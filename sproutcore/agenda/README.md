@@ -9,7 +9,7 @@ Only tested on WebKit-based browsers.
 
 ## Installing
 
-Add jquery-1.5.js to your app resources.
+Add jquery-1.5.js to your app resources (I'm planning to remove this requirement).
 
 Copy all the files (1 css and 2 js) in your application directory.
 
@@ -42,8 +42,8 @@ by your backend (they need not be models as usually done in SC apps) and that's
 part of the beauty on SC.
 
 For how this json data must be structured consult the source file agenda.js or
-even better the demo app.
+even better the demo app, file apps/agenda/main.js.
 
 ## Demo app
 
-in the demo directory.
+In the demo directory.
