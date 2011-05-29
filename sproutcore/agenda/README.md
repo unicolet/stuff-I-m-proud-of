@@ -5,7 +5,7 @@ AgendaView is a component for SC that displays activities
 on a grid like an agenda. Activities are grouped by room
 and by worker assigned to that room.
 
-Only tested on WebKit-based browsers.
+Only tested on WebKit-based browsers and Sproutcore 1.4.5.
 
 ## Installing
 
