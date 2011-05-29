@@ -9,6 +9,8 @@ Only tested on WebKit-based browsers.
 
 ## Installing
 
+Add jquery-1.5.js to your app resources.
+
 Copy all the files (1 css and 2 js) in your application directory.
 
 Edit agenda.js and change the view name from XC.AgendaView
@@ -39,6 +41,9 @@ In the current implementation shifts and appointments are json data as returned
 by your backend (they need not be models as usually done in SC apps) and that's
 part of the beauty on SC.
 
-For how this json data must be structured consult the source file agenda.js.
+For how this json data must be structured consult the source file agenda.js or
+even better the demo app.
 
+## Demo app
 
+in the demo directory.

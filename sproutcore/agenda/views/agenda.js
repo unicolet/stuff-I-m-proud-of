@@ -61,7 +61,7 @@
  @extends SC.View
  */
 
-XC.AgendaView = SC.View.extend(
+Agenda.AgendaView = SC.View.extend(
     /** @scope XC.AgendaView.prototype */ {
 
     shifts: null,
@@ -220,6 +220,7 @@ XC.AgendaView = SC.View.extend(
 
     renderAppointments: function(context, spazio, w) {
         var app = this.get("appointments");
+        //console.log("rendering appointments on: "+spazio+" = "+app[spazio]);
         if (app && app[spazio]) {
             for (var i = 0; i < app[spazio].length; i++) {
                 var appointment = app[spazio][i];
@@ -229,19 +230,19 @@ XC.AgendaView = SC.View.extend(
                 context = context.attr("onclick",this.get("appointmentOnClick"));
                 context = context.begin().push("<div class=\"customer\"><div class=\"customername\" style=\"width:"+(w-64)+"px;\">" +
                         appointment[k_customername] + "</div><div>" + this.instantToTime(appointment[k_begin])+ "</div></div>").end();
-                var terapyStart=appointment['inizio'];
+                var terapyStart=appointment[k_begin];
                 for (var t=0; t<terapies.length; t++) {
                     var terapyHeight=Math.round((terapies[t][k_length]/appointment[k_length])*styles.height);
                     var text="<div style=\"height:"+terapyHeight+"px;\" class=\"activity activity"+terapies[t][k_activityid]+
                             "\">" + terapies[t][k_activityname] + " ("+terapies[t][k_length]+"\') </div>";
                     if (t>0) {
                         text="<div style=\"height:"+terapyHeight+"px;\" class=\"activity activity"+terapies[t][k_activityid]+
-                                "\">" + terapies[t][k_activityname] + " ("+terapies[t][k_length]+"\' <span class=\"little\"> dalle "+
+                                "\">" + terapies[t][k_activityname] + " ("+terapies[t][k_length]+"\' <span class=\"little\"> @ "+
                                 instantToTime(terapyStart)+"</span>) </div>";
                     }
                     context = context.begin().push(text).end();
-                    // durata = length
-                    terapyStart+=terapies[t]['durata'];
+                    console.log(terapyStart+"+="+terapies[t][k_length]);
+                    terapyStart+=terapies[t][k_length];
                 }
                 context = context.end();
             }
@@ -285,15 +286,6 @@ XC.AgendaView = SC.View.extend(
         // customize this to handle your own events
         // the following commented out code is only provided as an example
         console.log("Agenda::mouseDown "+evt);
-
-        if (evt.srcElement && evt.srcElement.id.substr(0,2)=="st") {
-            var id_spazioturno=evt.srcElement.id.substr(2);
-            var toolBarHeight=36;
-            var scrollerOffset=this.getPath("parentView.parentView.verticalScrollOffset");
-            var positionY = scrollerOffset + evt.clientY - toolBarHeight;
-            Figep.figepController.selectSpazioTurno(id_spazioturno);
-            Figep.figepController.set("nuovoIstante", this.computeInstantFromPosition(positionY));
-        }
     }
 });
 
