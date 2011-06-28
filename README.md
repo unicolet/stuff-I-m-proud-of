@@ -13,4 +13,6 @@ Index:
 
 - sproutcore/agenda: a view that displays activities in a day like, well, an agenda
 
+- ms-access : a script to bulk migrate your Access MDB to sql (postgres or oracle)
+
 Enjoy, Umberto.
