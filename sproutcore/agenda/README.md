@@ -5,11 +5,12 @@ AgendaView is a component for SC that displays activities
 on a grid like an agenda. Activities are grouped by room
 and by worker assigned to that room.
 
-Only tested on WebKit-based browsers and Sproutcore 1.4.5.
+Only tested on WebKit-based browsers and Sproutcore 1.4.5, 1.6.
 
 ## Installing
 
-Add jquery-1.5.js to your app resources (I'm planning to remove this requirement).
+Skip this step if using SC 1.6 : add jquery-1.5.js to your app resources.
+jquery and SC >= 1.6 do not play well together: https://groups.google.com/forum/#!topic/sproutcore/6pkZ-IOg55g
 
 Copy all the files (1 css and 2 js) in your application directory.
 
