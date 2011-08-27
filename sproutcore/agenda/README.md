@@ -10,6 +10,7 @@ Only tested on WebKit-based browsers and Sproutcore 1.4.5, 1.6.
 ## Installing
 
 Skip this step if using SC 1.6 : add jquery-1.5.js to your app resources.
+
 jquery and SC >= 1.6 do not play well together: https://groups.google.com/forum/#!topic/sproutcore/6pkZ-IOg55g
 
 Copy all the files (1 css and 2 js) in your application directory.
